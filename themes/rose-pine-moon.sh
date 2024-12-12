@@ -1,6 +1,29 @@
 # shellcheck shell=bash
-# Default Theme
-# If changes made here does not take effect, then try to re-create the tmux session to force reload.
+# Rose Pine Moon Theme
+
+# Rose Pine Moon color palette
+C_BASE="#232136"
+C_SURFACE="#2a273f"
+C_OVERLAY="#393552"
+C_MUTED="#6e6a86"
+C_SUBTLE="#908caa"
+C_TEXT="#e0def4"
+C_LOVE="#eb6f92"
+C_GOLD="#f6c177"
+C_ROSE="#ea9a97"
+C_PINE="#3e8fb0"
+C_FOAM="#9ccfd8"
+C_IRIS="#c4a7e7"
+C_HIGHLIGHT_LOW="#2a283e"
+C_HIGHLIGHT_MED="#44415a"
+C_HIGHLIGHT_HIGH="#56526e"
+
+# Background and foreground colors
+TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR=$C_BASE
+TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR=$C_TEXT
+
+
+# From default theme
 
 if patched_font_in_use; then
 	TMUX_POWERLINE_SEPARATOR_LEFT_BOLD=""
@@ -99,11 +122,15 @@ fi
 # of options to support the spacing_disable and separator_disable features can be used
 # The default_* and no_* can be used to keep the default behaviour.
 
+
+# Customized segments in left and right status bars
+
 # shellcheck disable=SC1143,SC2128
 if [ -z "$TMUX_POWERLINE_LEFT_STATUS_SEGMENTS" ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
-		"tmux_session_info 148 234"
-		"pwd 89 211"
+		# "tmux_session_info 148 234"
+		"tmux_session_info $C_ROSE $C_SURFACE"
+		"pwd $C_FOAM $C_SURFACE"
 		# "hostname 33 0"
 		#"mode_indicator 165 0"
 		#"ifstat 30 255"
@@ -111,7 +138,7 @@ if [ -z "$TMUX_POWERLINE_LEFT_STATUS_SEGMENTS" ]; then
 		# "lan_ip 24 255 ${TMUX_POWERLINE_SEPARATOR_RIGHT_THIN}"
 		#"vpn 24 255 ${TMUX_POWERLINE_SEPARATOR_RIGHT_THIN}"
 		#"wan_ip 24 255"
-		"vcs_branch 29 88"
+		"vcs_branch $C_IRIS $C_SURFACE"
 		#"vcs_compare 60 255"
 		#"vcs_staged 64 255"
 		#"vcs_modified 9 255"
@@ -129,14 +156,14 @@ if [ -z "$TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS" ]; then
 		#"cpu 240 136"
 		#"load 237 167"
 		#"tmux_mem_cpu_load 234 136"
-		"battery 137 127"
+		"battery $C_GOLD $C_SURFACE"
 		#"air ${TMUX_POWERLINE_SEG_AIR_COLOR} 255"
 		#"weather 37 255"
 		#"rainbarf 0 ${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR}"
 		#"xkb_layout 125 117"
-		"date_day 235 136"
-		"date 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
-		"time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
+		"date_day $C_FOAM $C_SURFACE" 
+		"date $C_PINE $C_SURFACE" 
+		"time $C_IRIS $C_SURFACE" 
 		#"utc_time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
 	)
 fi
