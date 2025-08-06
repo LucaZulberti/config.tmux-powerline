@@ -79,14 +79,6 @@ if [ -z "$TMUX_POWERLINE_WINDOW_STATUS_FORMAT" ]; then
 	)
 fi
 
-# Time Zone
-if [ -z "$TZ" ]; then
-	TZ="UTC"
-fi
-if [ -z "$TMUX_POWERLINE_SEG_TIME_TZ" ]; then
-	TMUX_POWERLINE_SEG_TIME_TZ="$TZ"
-fi
-
 # Format: segment_name [background_color|default_bg_color] [foreground_color|default_fg_color] [non_default_separator|default_separator] [separator_background_color|no_sep_bg_color]
 #                      [separator_foreground_color|no_sep_fg_color] [spacing_disable|no_spacing_disable] [separator_disable|no_separator_disable]
 #
