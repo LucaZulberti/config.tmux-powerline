@@ -143,7 +143,6 @@ if [ -z "$TMUX_POWERLINE_LEFT_STATUS_SEGMENTS" ]; then
 		#"vcs_staged 64 255"
 		#"vcs_modified 9 255"
 		#"vcs_others 245 0"
-		"pomodoro $C_PINE $C_SURFACE"
 	)
 fi
 
@@ -154,6 +153,7 @@ if [ -z "$TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS" ]; then
 		#"macos_notification_count 29 255"
 		#"mailcount 9 255"
 		"now_playing $C_ROSE $C_SURFACE"
+		"pomodoro $C_LOVE $C_SURFACE"
 		#"cpu 240 136"
 		#"load 237 167"
 		#"tmux_mem_cpu_load 234 136"
